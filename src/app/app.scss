@@ -1,0 +1,52 @@
+#text p {
+    --delay: 0.7s;
+    --duration: 2s;
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    opacity: 0;
+    animation: fadein var(--duration);
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+    -moz-animation: fadein var(--duration); /* Firefox */
+    -moz-animation-delay: var(--delay);
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation: fadein var(--duration); /* Safari and Chrome */
+    -webkit-animation-delay: var(--delay);
+    -webkit-animation-fill-mode: forwards;
+    -o-animation: fadein var(--duration); /* Opera */
+    -o-animation-delay: var(--delay);
+    -o-animation-fill-mode: forwards;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
