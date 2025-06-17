@@ -1,4 +1,4 @@
-import { animate, query, style, transition, trigger } from '@angular/animations';
+import { animate, query, style, transition, trigger, state } from '@angular/animations';
 
 export const routeTransition = trigger('routeTransition', [
   transition('* => *, void => *', [

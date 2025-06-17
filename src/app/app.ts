@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { About } from './pages/about/about';
@@ -6,10 +6,11 @@ import { Experience } from './pages/experience/experience';
 import { Contact } from './pages/contact/contact';
 import { Home } from './pages/home/home';
 import { routeTransition } from './route-trans';
+import { Disable } from './directives/disable';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header],
+  imports: [RouterOutlet, Header, Disable],
   animations: [
     routeTransition
   ],
@@ -17,8 +18,8 @@ import { routeTransition } from './route-trans';
     <app-header />
     <div id='text'>
       <main>
-        <div [@routeTransition]="route.snapshot.data" style="display: hidden">
-            <router-outlet></router-outlet>
+        <div appDisable="" [@routeTransition]="route.snapshot.data">
+          <router-outlet></router-outlet>
         </div>
       </main>
     </div>
@@ -27,5 +28,6 @@ import { routeTransition } from './route-trans';
 })
 export class App {
   protected title = 'Website';
+
   constructor(protected route: ActivatedRoute) {}
 }

@@ -59,3 +59,11 @@
         opacity: 1;
     }
 }
+
+#noanimation p {
+  opacity: 1 !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
