@@ -30,7 +30,11 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss",
               "src/app/app.scss",
-              "src/app/header/header.scss"
+              "src/app/header/header.scss",
+              "src/app/pages/home/home.scss",
+              "src/app/pages/about/about.scss",
+              "src/app/pages/experience/experience.scss",
+              "src/app/pages/contact/contact.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

@@ -11,6 +11,6 @@ export class Disable implements AfterViewInit {
   ngAfterViewInit() {
     setTimeout( () => {
       this.el.nativeElement.setAttribute("id", "noanimation");
-    }, 2000);
+    }, 3000);
   }
 }

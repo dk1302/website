@@ -1,0 +1,20 @@
+.col-border {
+  padding-left: 0px;
+  position: static;
+  border-left: 2px solid #71797e;
+}
+
+.col-border:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  }
+
+.row-relative {
+  position: relative;
+}
+
+.img-fluid {
+  width: 80% !important;
+}
