@@ -29,5 +29,5 @@ import { Disable } from './directives/disable';
 export class App {
   protected title = 'Website';
 
-  constructor(protected route: ActivatedRoute) {}
+  constructor(protected route: ActivatedRoute) { }
 }
