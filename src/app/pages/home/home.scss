@@ -1,19 +1,36 @@
 .col-border {
-  padding-left: 0px;
-  position: static;
-  border-left: 2px solid #71797e;
+  border-left: 2px solid black;
 }
-
-.col-border:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  }
 
 .row-relative {
   position: relative;
 }
+
+.border-between > [class*='col-']:before {
+   background: #71797e;
+   bottom: 0;
+   content: " ";
+   left: 0;
+   position: absolute;
+   width: 2px;
+   top: 0;
+}
+
+.border-between > [class*='col-']:first-child:before {
+   display: none;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  width: 85%;
+  border: 0;
+  border-top: 2px solid black;
+  margin: auto;
+  padding: 0;
+  opacity: 1;
+}
+
 
 .img-fluid {
   width: 80% !important;

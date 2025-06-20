@@ -1,12 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
-import { About } from './pages/about/about';
-import { Experience } from './pages/experience/experience';
-import { Contact } from './pages/contact/contact';
-import { Home } from './pages/home/home';
 import { routeTransition } from './route-trans';
 import { Disable } from './directives/disable';
+import { isPlatformBrowser } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +16,7 @@ import { Disable } from './directives/disable';
     <app-header />
     <div id='text'>
       <main>
-        <div appDisable="" [@routeTransition]="route.snapshot.data">
+        <div appDiable="" [@routeTransition]="route.snapshot.data">
           <router-outlet></router-outlet>
         </div>
       </main>
@@ -26,8 +24,14 @@ import { Disable } from './directives/disable';
   `,
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements AfterViewInit {
   protected title = 'Website';
 
-  constructor(protected route: ActivatedRoute) { }
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({});
+    }
+  }
+
+  constructor(protected route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object) { }
 }
